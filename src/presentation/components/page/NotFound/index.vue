@@ -2,7 +2,7 @@
     <div class="wrapper">
         <h1 class="header">Page Not Found</h1>
         <span class="error-code">404</span>
-        <BaseButton :to="HOME">Go Home</BaseButton>
+        <BaseButton :to="HOME" :variant="'secondary'">Go Home</BaseButton>
     </div>
 </template>
 

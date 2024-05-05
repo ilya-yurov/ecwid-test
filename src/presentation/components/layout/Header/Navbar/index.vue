@@ -16,6 +16,7 @@ defineOptions({ name: 'Navbar' });
 <style lang="scss" scoped>
 .wrapper {
     display: flex;
+    color: $color-green;
 
     @include h3;
 }

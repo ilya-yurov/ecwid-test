@@ -2,12 +2,13 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-size: 16px;
-  line-height: 1.2;
   color: $color-black;
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
   font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 *,

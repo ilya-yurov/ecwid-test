@@ -22,5 +22,6 @@ defineOptions({ name: 'Header' });
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 0 0 10px 10px;
 }
 </style>
