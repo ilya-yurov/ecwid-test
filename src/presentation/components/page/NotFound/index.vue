@@ -1,24 +1,29 @@
 <template>
-    <div class="wrapper">
-        <h1 class="header">Page Not Found</h1>
-        <span class="error-code">404</span>
-        <BaseButton :to="HOME" :variant="'secondary'">Go Home</BaseButton>
-    </div>
+    <Layout>
+        <div class="wrapper">
+            <h1 class="header">Page Not Found</h1>
+            <span class="error-code">404</span>
+            <BaseButton :to="HOME" :variant="'secondary'">Go Home</BaseButton>
+        </div>
+    </Layout>
 </template>
 
 <script setup lang="ts">
 import { HOME } from '@constant/routes';
+import useStaticHeaderPage from '@presentation/hooks/layout/useStaticHeaderPage.ts';
+import Layout from '@presentation/components/layout/Layout/index.vue';
+
+useStaticHeaderPage();
 
 defineOptions({ name: 'NotFound' });
 </script>
 
 <style lang="scss" scoped>
 .wrapper {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: calc(100vh - $header-height - $footer-height);
+    height: calc(100vh - $footer-height);
+
+    @include flex-center;
 }
 
 .header {
@@ -27,6 +32,10 @@ defineOptions({ name: 'NotFound' });
 
 .error-code {
     font-size: 300px;
+
+    @include -lower(md) {
+        font-size: 250px;
+    }
 
     @include -lower(sm) {
         font-size: 200px;

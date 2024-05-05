@@ -3,18 +3,19 @@
         <span v-show="count > 0" class="round">
             {{ count }}
         </span>
-        <CartIcon class="icon" />
+        <CartIcon class="icon" :class="{ 'icon-white': isWhite }" />
     </button>
 </template>
 
 <script setup lang="ts">
 import CartIcon from '@presentation/assets/svg/cart.svg';
 
-type CartButtonPropsT = {
+type PropsT = {
     count?: number;
+    isWhite?: boolean;
 };
 
-const { count = 0 } = defineProps<CartButtonPropsT>();
+const { count = 0, isWhite } = defineProps<PropsT>();
 
 defineOptions({ name: 'CartIcon' });
 </script>
@@ -36,15 +37,18 @@ defineOptions({ name: 'CartIcon' });
     width: 17px;
     font-size: 12px;
     font-weight: 700;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    @include flex-center;
 }
 
 .icon {
     fill: $color-black;
     height: 25px;
     width: 25px;
-    transition: fill var(--transition-fast);
+    transition: fill var(--transition-slow);
+}
+
+.icon-white {
+    fill: $color-white;
 }
 </style>

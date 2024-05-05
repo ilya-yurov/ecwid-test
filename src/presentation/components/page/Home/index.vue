@@ -1,7 +1,18 @@
-<script setup lang="ts"></script>
-
 <template>
-    <h2>Home page</h2>
+    <Layout>
+        <Intro />
+        <div class="mock-container" />
+    </Layout>
 </template>
 
-<style lang="scss" scoped></style>
+<script setup lang="ts">
+import Layout from '@presentation/components/layout/Layout/index.vue';
+import Intro from './Intro/index.vue';
+</script>
+
+<style lang="scss" scoped>
+.mock-container {
+    height: 700px;
+    background-color: $color-mint;
+}
+</style>

@@ -19,6 +19,8 @@
       "@/*": ["./src/*"],
       "@presentation/*": ["presentation/*"],
       "@constant/*": ["constant/*"],
+      "@store/*": ["store/*"],
+      "@hooks/*": ["hooks/*"],
     },
 
     /* Linting */

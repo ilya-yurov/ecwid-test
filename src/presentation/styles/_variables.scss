@@ -1,2 +1,16 @@
+@import "@presentation/mixins/mq";
+
 $header-height: 70px;
 $footer-height: 70px;
+
+:root {
+  --container-gutter: 80px;
+
+  @include -lower(md) {
+    --container-gutter: 40px;
+  }
+
+  @include -lower(sm) {
+    --container-gutter: 20px;
+  }
+}

@@ -27,7 +27,9 @@ export default defineConfig({
     resolve: {
         alias: {
             "@presentation": fileURLToPath(new URL("./src/presentation", import.meta.url)),
-            "@constant": fileURLToPath(new URL("./src/constant", import.meta.url))
+            "@constant": fileURLToPath(new URL("./src/constant", import.meta.url)),
+            "@store": fileURLToPath(new URL("./src/store", import.meta.url)),
+            "@hooks": fileURLToPath(new URL("./src/hooks", import.meta.url)),
         }
     },
     base: "/",
@@ -35,7 +37,7 @@ export default defineConfig({
         preprocessorOptions: {
             scss: {
                 additionalData: `
-                    @import "@presentation/mixins/mq";
+                    @import "@presentation/mixins/index.scss";
                     @import "@presentation/styles/index.scss";
                 `,
             },

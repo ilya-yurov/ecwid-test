@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import COPYRIGHT_TEXT from './content.ts';
 
-defineOptions({name: 'Footer'});
+defineOptions({ name: 'Footer' });
 </script>
 
 <style lang="scss" scoped>
@@ -15,9 +15,8 @@ defineOptions({name: 'Footer'});
     height: $footer-height;
     background-color: $color-green;
     border-radius: 10px 10px 0 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    @include flex-center;
 }
 
 .footer-text {
