@@ -36,7 +36,7 @@ export default defineConfig({
             scss: {
                 additionalData: `
                     @import "@presentation/mixins/mq";
-                    @import "@presentation/styles/global.scss";
+                    @import "@presentation/styles/index.scss";
                 `,
             },
         },

@@ -11,12 +11,12 @@ import Navbar from './Navbar/index.vue';
 
 const MOCK_CART_ITEMS_COUNT = 10;
 
-defineOptions({name: 'Header'});
+defineOptions({ name: 'Header' });
 </script>
 
 <style lang="scss" scoped>
 .header {
-    height: 70px;
+    height: $header-height;
     background-color: $color-grayishGreen;
     padding: 20px;
     display: flex;

@@ -3,20 +3,20 @@
         <span v-show="count > 0" class="round">
             {{ count }}
         </span>
-        <CartIcon class="icon"/>
+        <CartIcon class="icon" />
     </button>
 </template>
 
 <script setup lang="ts">
 import CartIcon from '@presentation/assets/svg/cart.svg';
 
-type CartButtonProps = {
-    count?: number
-}
+type CartButtonPropsT = {
+    count?: number;
+};
 
-const { count = 0 } = defineProps<CartButtonProps>()
+const { count = 0 } = defineProps<CartButtonPropsT>();
 
-defineOptions({name: 'CartIcon'});
+defineOptions({ name: 'CartIcon' });
 </script>
 
 <style lang="scss" scoped>

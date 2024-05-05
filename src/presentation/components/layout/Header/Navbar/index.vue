@@ -10,17 +10,17 @@
 <script setup lang="ts">
 import LINKS from './content';
 
-defineOptions({name: 'Navbar'});
+defineOptions({ name: 'Navbar' });
 </script>
 
 <style lang="scss" scoped>
-    .wrapper {
-        display: flex;
+.wrapper {
+    display: flex;
 
-        @include h3;
-    }
+    @include h3;
+}
 
-    .divider {
-        margin: 0 10px;
-    }
+.divider {
+    margin: 0 10px;
+}
 </style>
