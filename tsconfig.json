@@ -17,7 +17,8 @@
     "paths": {
       /* Sub locations */
       "@/*": ["./src/*"],
-      "@presentation/*": ["presentation/*", "presentation/*/index.vue"],
+      "@presentation/*": ["presentation/*"],
+      "@constant/*": ["constant/*"],
     },
 
     /* Linting */
@@ -35,5 +36,6 @@
     "auto-imports.d.ts"
   ],
   "exclude": ["node_modules"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "types": ["vite-svg-loader"]
 }

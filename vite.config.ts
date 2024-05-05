@@ -2,6 +2,7 @@ import { defineConfig } from 'vitest/config';
 import vue from '@vitejs/plugin-vue'
 import AutoImport from "unplugin-auto-import/vite";
 import { fileURLToPath, URL } from "node:url";
+import svgLoader from 'vite-svg-loader'
 
 export default defineConfig({
     plugins: [
@@ -17,6 +18,7 @@ export default defineConfig({
                 globalsPropValue: true
             },
         }),
+        svgLoader(),
     ],
     test: {
         globals: true,
@@ -24,8 +26,8 @@ export default defineConfig({
     },
     resolve: {
         alias: {
-            "@": fileURLToPath(new URL("./src", import.meta.url)),
-            "@presentation": fileURLToPath(new URL("./src/presentation", import.meta.url))
+            "@presentation": fileURLToPath(new URL("./src/presentation", import.meta.url)),
+            "@constant": fileURLToPath(new URL("./src/constant", import.meta.url))
         }
     },
     base: "/",
