@@ -33,8 +33,7 @@ defineOptions({ name: 'BaseButton' });
     padding: 10px 15px;
 
     &:active {
-        transition: transform var(--transition-fast);
-        transform: scale(0.95);
+        @include scale;
     }
 }
 

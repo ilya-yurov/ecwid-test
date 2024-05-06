@@ -1,7 +1,7 @@
 <template>
     <ul class="wrapper" :class="{ 'wrapper-white': isWhite }">
         <li v-for="(link, index) in LINKS" :key="link.text">
-            <RouterLink :to="link.url">{{ link.text }}</RouterLink>
+            <BaseLink :to="link.url">{{ link.text }}</BaseLink>
             <span v-if="index !== LINKS.length - 1" class="divider">|</span>
         </li>
     </ul>
@@ -22,7 +22,7 @@ defineOptions({ name: 'Navbar' });
 <style lang="scss" scoped>
 .wrapper {
     display: flex;
-    color: $color-green;
+    color: $color-black;
     transition: color var(--transition-slow);
 
     @include h3;

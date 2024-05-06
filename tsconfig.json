@@ -21,6 +21,10 @@
       "@constant/*": ["constant/*"],
       "@store/*": ["store/*"],
       "@hooks/*": ["hooks/*"],
+      "@core/*": ["core/*"],
+      "@service/*": ["service/*"],
+      "@entity/*": ["entity/*"],
+      "@helpers/*": ["helpers/*"],
     },
 
     /* Linting */

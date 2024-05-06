@@ -11,3 +11,30 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin container-gutter {
+  padding-left: var(--container-gutter);
+  padding-right: var(--container-gutter);
+}
+
+@mixin rounded-corners {
+  border-radius:15px 15px 0 0;
+  margin-top: -15px;
+}
+
+@mixin scale {
+  transition: transform var(--transition-normal);
+  transform: scale(0.95);
+}
+
+@mixin title {
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 60px;
+
+    @include -lower(sm) {
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 44px;
+    }
+}

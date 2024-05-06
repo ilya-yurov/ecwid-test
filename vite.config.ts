@@ -32,6 +32,10 @@ export default defineConfig({
             "@constant": fileURLToPath(new URL("./src/constant", import.meta.url)),
             "@store": fileURLToPath(new URL("./src/store", import.meta.url)),
             "@hooks": fileURLToPath(new URL("./src/hooks", import.meta.url)),
+            "@core": fileURLToPath(new URL("./src/core", import.meta.url)),
+            "@service": fileURLToPath(new URL("./src/service", import.meta.url)),
+            "@entity": fileURLToPath(new URL("./src/entity", import.meta.url)),
+            "@helpers": fileURLToPath(new URL("./src/helpers", import.meta.url)),
         }
     },
     base: "/",

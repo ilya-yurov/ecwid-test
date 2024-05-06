@@ -1,13 +1,14 @@
 <template>
-    <button class="wrapper">
+    <BaseLink :to="CART" class="wrapper">
         <span v-show="count > 0" class="round">
             {{ count }}
         </span>
         <CartIcon class="icon" :class="{ 'icon-white': isWhite }" />
-    </button>
+    </BaseLink>
 </template>
 
 <script setup lang="ts">
+import { CART } from '@constant/routes.ts';
 import CartIcon from '@presentation/assets/svg/cart.svg';
 
 type PropsT = {
@@ -17,7 +18,7 @@ type PropsT = {
 
 const { count = 0, isWhite } = defineProps<PropsT>();
 
-defineOptions({ name: 'CartButton' });
+defineOptions({ name: 'CartLink' });
 </script>
 
 <style lang="scss" scoped>
@@ -25,6 +26,10 @@ defineOptions({ name: 'CartButton' });
     position: relative;
     height: 25px;
     width: 25px;
+
+    &:active {
+        @include scale;
+    }
 }
 
 .round {

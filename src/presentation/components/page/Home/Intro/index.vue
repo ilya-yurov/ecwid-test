@@ -24,8 +24,8 @@ defineOptions({ name: 'Intro' });
     background-image: url('@presentation/assets/image/mainBackground.jpeg');
     background-size: cover;
     background-position: center;
-    padding: 0 var(--container-gutter);
 
+    @include container-gutter;
     @include flex-center;
     @include height100vh;
 }

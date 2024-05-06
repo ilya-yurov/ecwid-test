@@ -6,7 +6,7 @@
         }"
     >
         <Navbar :isWhite="!isHeaderWithBackground && !isStaticHeaderPage" />
-        <CartButton
+        <CartLink
             :count="MOCK_CART_ITEMS_COUNT"
             :isWhite="!isHeaderWithBackground && !isStaticHeaderPage"
         />
@@ -29,7 +29,7 @@ defineOptions({ name: 'Header' });
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 15px 15px;
     position: fixed;
     width: 100%;
     transition: background-color var(--transition-slow);

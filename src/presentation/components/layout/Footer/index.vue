@@ -14,9 +14,11 @@ defineOptions({ name: 'Footer' });
 .footer {
     height: $footer-height;
     background-color: $color-green;
-    border-radius: 10px 10px 0 0;
+    border-radius: 15px 15px 0 0;
+    z-index: 1;
 
     @include flex-center;
+    @include rounded-corners;
 }
 
 .footer-text {
