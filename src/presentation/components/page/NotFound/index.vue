@@ -22,8 +22,8 @@ defineOptions({ name: 'NotFound' });
     flex-direction: column;
     height: calc(100vh - $footer-height);
 
-    @supports (height: 100svh) {
-        height: calc(100svh - $footer-height);
+    @supports (height: 100dvh) {
+        height: calc(100dvh - $footer-height);
     }
 
     @include flex-center;
