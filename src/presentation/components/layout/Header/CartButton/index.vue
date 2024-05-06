@@ -17,7 +17,7 @@ type PropsT = {
 
 const { count = 0, isWhite } = defineProps<PropsT>();
 
-defineOptions({ name: 'CartIcon' });
+defineOptions({ name: 'CartButton' });
 </script>
 
 <style lang="scss" scoped>

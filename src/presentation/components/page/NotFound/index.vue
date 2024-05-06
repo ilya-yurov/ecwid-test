@@ -11,7 +11,6 @@
 <script setup lang="ts">
 import { HOME } from '@constant/routes';
 import useStaticHeaderPage from '@presentation/hooks/layout/useStaticHeaderPage.ts';
-import Layout from '@presentation/components/layout/Layout/index.vue';
 
 useStaticHeaderPage();
 
@@ -22,6 +21,10 @@ defineOptions({ name: 'NotFound' });
 .wrapper {
     flex-direction: column;
     height: calc(100vh - $footer-height);
+
+    @supports (height: 100svh) {
+        height: calc(100svh - $footer-height);
+    }
 
     @include flex-center;
 }

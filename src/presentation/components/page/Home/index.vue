@@ -5,10 +5,7 @@
     </Layout>
 </template>
 
-<script setup lang="ts">
-import Layout from '@presentation/components/layout/Layout/index.vue';
-import Intro from './Intro/index.vue';
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
 .mock-container {

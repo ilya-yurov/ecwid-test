@@ -14,9 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import useHeaderColorChange from '@presentation/hooks/layout/useHeaderColorChange.ts';
-import CartButton from './CartButton/index.vue';
-import Navbar from './Navbar/index.vue';
+import useHeaderColorChange from '@presentation/hooks/layout/useHeaderColorChange';
 
 const { isHeaderWithBackground, isStaticHeaderPage } = useHeaderColorChange();
 const MOCK_CART_ITEMS_COUNT = 10;
