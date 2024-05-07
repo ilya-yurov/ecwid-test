@@ -1,7 +1,11 @@
-interface Category {
-    id: number;
-    name: string;
-    imageUrl: string;
-}
+export default class Category {
+    public static CreateEmpty(): Category {
+        return new Category(NaN, '', '');
+    }
 
-export default Category;
+    constructor(
+        public readonly id: number,
+        public readonly name: string,
+        public readonly imageUrl: string
+    ) {}
+}

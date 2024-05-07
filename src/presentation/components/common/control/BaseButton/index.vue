@@ -10,18 +10,30 @@
     >
         <slot />
     </RouterLink>
-    <button v-else class="button">
+    <button
+        v-else
+        class="button"
+        :class="{
+            'button-primary': rcVariant === 'primary',
+            'button-secondary': rcVariant === 'secondary'
+        }"
+        :type="type"
+    >
         <slot />
     </button>
 </template>
 
 <script setup lang="ts">
-type BaseButtonPropsT = {
+type PropsT = {
     variant?: 'primary' | 'secondary';
+    type?: 'button' | 'submit';
     to?: string;
 };
 
-const { variant = 'primary', to } = defineProps<BaseButtonPropsT>();
+const { variant } = withDefaults(defineProps<PropsT>(), {
+    variant: 'primary',
+    type: 'button'
+});
 const rcVariant = ref(variant);
 
 defineOptions({ name: 'BaseButton' });

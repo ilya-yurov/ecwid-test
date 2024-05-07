@@ -7,7 +7,7 @@ const useCategoryStore = defineStore('category', () => {
     const categories = ref([] as Category[]);
     const isLoading = ref(false);
 
-    const fetchCategoriesList = async () => {
+    const fetchCategories = async () => {
         isLoading.value = true;
         categories.value = await CategoryService.fetchCategories();
         isLoading.value = false;
@@ -16,7 +16,7 @@ const useCategoryStore = defineStore('category', () => {
     return {
         categories,
         isLoading,
-        fetchCategoriesList
+        fetchCategories
     };
 });
 

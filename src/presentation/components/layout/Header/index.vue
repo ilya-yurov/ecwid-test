@@ -33,9 +33,12 @@ defineOptions({ name: 'Header' });
     position: fixed;
     width: 100%;
     transition: background-color var(--transition-slow);
+    z-index: var(--z-fixed);
 }
 
 .header-colored {
-    background-color: $color-lightGreen;
+    background-color: $color-mint;
+
+    @include box-shadow;
 }
 </style>

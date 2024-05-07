@@ -9,6 +9,7 @@ import LoaderIcon from '@presentation/assets/svg/loader.svg';
 
 type PropsT = {
     size?: number;
+    loaderCss?: string;
 };
 
 const { size } = withDefaults(defineProps<PropsT>(), {

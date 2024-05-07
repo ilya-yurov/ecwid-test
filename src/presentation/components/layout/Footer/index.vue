@@ -15,7 +15,7 @@ defineOptions({ name: 'Footer' });
     height: $footer-height;
     background-color: $color-green;
     border-radius: 15px 15px 0 0;
-    z-index: 1;
+    z-index: var(--z-sticky);
 
     @include flex-center;
     @include rounded-corners;

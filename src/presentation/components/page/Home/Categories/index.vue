@@ -1,48 +1,35 @@
 <template>
-    <div class="wrapper">
-        <h2 class="title">Categories</h2>
-        <Loader v-if="isLoading" :size="60" />
-        <div v-else class="cart-wrapper">
-            <CategoryCart
-                v-for="category in categories"
-                :key="category.id"
-                :category="category"
-            />
-        </div>
-    </div>
+    <HomeBlockContainer
+        class="container"
+        title="Categories"
+        description="Explore Your Passions: Find Your Ideal Category Match"
+        :descriptionCss="customDescriptionCss"
+        :isLoading="isLoading"
+    >
+        <CategoryCard
+            v-for="category in categories"
+            :key="category.id"
+            :category="category"
+        />
+    </HomeBlockContainer>
 </template>
 
 <script setup lang="ts">
 import useCategories from '@presentation/hooks/categories/useCategories';
+import type CustomStylesT from '@presentation/types/CustomStyles';
+import ColorsEnum from '@presentation/enums/Colors';
 
 const { categories, isLoading } = useCategories();
+const customDescriptionCss: CustomStylesT = {
+    color: ColorsEnum.White
+};
 
 defineOptions({ name: 'Categories' });
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
-    position: relative;
-    display: grid;
-    background-color: $color-peachy;
-    padding: 20px var(--container-gutter) 0;
-    min-height: 355px;
-}
-
-.loader {
-    fill: $color-white;
-}
-
-.cart-wrapper {
-    display: grid;
-    grid-auto-flow: column;
-    column-gap: 20px;
-    overflow-x: auto;
-    max-width: 100%;
-    width: fit-content;
-}
-
-.title {
-    @include title;
+.container {
+    background-color: $color-lightGreen;
+    height: 420px;
 }
 </style>

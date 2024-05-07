@@ -12,7 +12,7 @@ const useCategories = (): ReturnT => {
     const { isLoading, categories } = storeToRefs(store);
 
     onMounted(async () => {
-        await store.fetchCategoriesList();
+        await store.fetchCategories();
     });
 
     return { categories, isLoading };
