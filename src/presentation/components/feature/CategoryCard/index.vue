@@ -1,5 +1,5 @@
 <template>
-    <RouterLink :to="PRODUCT_LINK(id)">
+    <RouterLink :to="{ path: PRODUCTS, query: { categoryId: id } }">
         <div class="card">
             <CardImage altText="category image" :imageUrl="imageUrl" />
             <span class="name">{{ name }}</span>
@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import type Category from '@entity/Category';
-import { PRODUCT_LINK } from '@helpers/linkBuilder';
+import { PRODUCTS } from '@constant/routes.ts';
 
 type PropsT = {
     category: Category;

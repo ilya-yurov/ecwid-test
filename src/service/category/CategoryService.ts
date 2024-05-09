@@ -12,7 +12,10 @@ export default class CategoryService {
         try {
             const response = await api.get<ResponseT>(CATEGORIES, {
                 params: {
-                    responseFields: getResponseFields(Category.CreateEmpty())
+                    responseFields: getResponseFields(
+                        Category.CreateEmpty(),
+                        true
+                    )
                 }
             });
 

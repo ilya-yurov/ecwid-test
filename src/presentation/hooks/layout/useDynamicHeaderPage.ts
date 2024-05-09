@@ -1,16 +1,16 @@
 import { onMounted, onUnmounted } from 'vue';
 import useLayoutStore from '@store/layout/useLayoutStore.ts';
 
-const useStaticHeaderPage = () => {
+const useDynamicHeaderPage = () => {
     const store = useLayoutStore();
 
     onMounted(() => {
-        store.setStaticHeaderPage(true);
+        store.setIsDynamicHeaderPage(true);
     });
 
     onUnmounted(() => {
-        store.setStaticHeaderPage(false);
+        store.setIsDynamicHeaderPage(false);
     });
 };
 
-export default useStaticHeaderPage;
+export default useDynamicHeaderPage;

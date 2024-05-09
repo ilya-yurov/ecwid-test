@@ -25,6 +25,7 @@
       "@service/*": ["service/*"],
       "@entity/*": ["entity/*"],
       "@helpers/*": ["helpers/*"],
+      "@router/*": ["router/*"],
     },
 
     /* Linting */

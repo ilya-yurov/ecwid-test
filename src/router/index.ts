@@ -6,9 +6,14 @@ const routes = [
         component: () => import('@presentation/components/page/Home/index.vue')
     },
     {
+        path: '/products',
+        component: () =>
+            import('@presentation/components/page/Products/index.vue')
+    },
+    {
         path: '/:pathMatch(.*)*',
         component: () =>
-            import('@presentation/components/page/NotFound/index.vue')
+            import('@presentation/components/page/ErrorPage/index.vue')
     }
 ];
 

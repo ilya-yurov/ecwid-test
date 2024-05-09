@@ -7,10 +7,12 @@
         :isLoading="isLoading"
     >
         <ProductCard
+            v-if="products.length > 0"
             v-for="product in products"
             :key="product.id"
             :product="product"
         />
+        <span v-else>No products found</span>
     </HomeBlockContainer>
 </template>
 
@@ -24,7 +26,7 @@ const customDescriptionCss: CustomStylesT = {
     color: ColorsEnum.Blue
 };
 
-defineOptions({ name: 'Products' });
+defineOptions({ name: 'ProductsBlock' });
 </script>
 
 <style lang="scss" scoped>

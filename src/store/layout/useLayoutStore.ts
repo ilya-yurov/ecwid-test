@@ -3,21 +3,21 @@ import { ref } from 'vue';
 
 const useLayoutStore = defineStore('layout', () => {
     const isHeaderWithBackground = ref(false);
-    const isStaticHeaderPage = ref(false);
+    const isDynamicHeaderPage = ref(false);
 
-    const setHeaderWithBackground = (withBackground: boolean) => {
+    const setIsHeaderWithBackground = (withBackground: boolean) => {
         isHeaderWithBackground.value = withBackground;
     };
 
-    const setStaticHeaderPage = (isStatic: boolean) => {
-        isStaticHeaderPage.value = isStatic;
+    const setIsDynamicHeaderPage = (isStatic: boolean) => {
+        isDynamicHeaderPage.value = isStatic;
     };
 
     return {
         isHeaderWithBackground,
-        isStaticHeaderPage,
-        setHeaderWithBackground,
-        setStaticHeaderPage
+        isDynamicHeaderPage,
+        setIsHeaderWithBackground,
+        setIsDynamicHeaderPage
     };
 });
 

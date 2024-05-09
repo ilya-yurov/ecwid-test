@@ -1,16 +1,18 @@
 <template>
-    <div class="wrapper">
+    <section class="wrapper">
         <div class="container">
             <h2 class="title">{{ title }}</h2>
-            <span class="description" :style="descriptionCss">{{
-                description
-            }}</span>
+            <span class="description" :style="descriptionCss">
+                {{ description }}
+            </span>
             <Loader v-if="isLoading" class="loader" :size="60" />
             <div v-else class="card-wrapper">
-                <slot />
+                <div class="card-container">
+                    <slot />
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">
@@ -41,14 +43,17 @@ defineOptions({ name: 'HomeBlockContainer' });
 }
 
 .card-wrapper {
+    overflow-x: auto;
+    max-width: 100%;
+
+    @include custom-scrollbar;
+}
+
+.card-container {
     display: grid;
     grid-auto-flow: column;
     column-gap: 20px;
-    overflow-x: auto;
-    max-width: 100%;
     width: fit-content;
-
-    @include custom-scrollbar;
 }
 
 .description {

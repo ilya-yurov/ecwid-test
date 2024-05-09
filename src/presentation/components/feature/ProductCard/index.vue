@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <RouterLink :to="PRODUCT_LINK(id)">
+        <RouterLink :to="{ path: PRODUCTS, query: { id } }">
             <CardImage
                 class="image-wrapper"
                 altText="product image"
@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import type Product from '@entity/Product';
-import { PRODUCT_LINK } from '@helpers/linkBuilder';
+import { PRODUCTS } from '@constant/routes.ts';
 
 type PropsT = {
     product: Product;

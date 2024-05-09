@@ -5,20 +5,20 @@ const OFFSET = 100;
 
 type ReturnT = {
     isHeaderWithBackground: Ref<boolean>;
-    isStaticHeaderPage: Ref<boolean>;
+    isDynamicHeaderPage: Ref<boolean>;
 };
 
 const useHeaderColorChange = (): ReturnT => {
     const store = useLayoutStore();
-    const { isHeaderWithBackground, isStaticHeaderPage } = storeToRefs(store);
+    const { isHeaderWithBackground, isDynamicHeaderPage } = storeToRefs(store);
 
     const handleScroll = () => {
         const scrollTop = window.scrollY;
 
         if (scrollTop > OFFSET) {
-            store.setHeaderWithBackground(true);
+            store.setIsHeaderWithBackground(true);
         } else {
-            store.setHeaderWithBackground(false);
+            store.setIsHeaderWithBackground(false);
         }
     };
 
@@ -30,7 +30,7 @@ const useHeaderColorChange = (): ReturnT => {
         window.removeEventListener('scroll', handleScroll);
     });
 
-    return { isHeaderWithBackground, isStaticHeaderPage };
+    return { isHeaderWithBackground, isDynamicHeaderPage };
 };
 
 export default useHeaderColorChange;

@@ -7,10 +7,12 @@
         :isLoading="isLoading"
     >
         <CategoryCard
+            v-if="categories.length > 0"
             v-for="category in categories"
             :key="category.id"
             :category="category"
         />
+        <span v-else>No categories found</span>
     </HomeBlockContainer>
 </template>
 
@@ -24,7 +26,7 @@ const customDescriptionCss: CustomStylesT = {
     color: ColorsEnum.White
 };
 
-defineOptions({ name: 'Categories' });
+defineOptions({ name: 'CategoriesBlock' });
 </script>
 
 <style lang="scss" scoped>

@@ -36,6 +36,7 @@ export default defineConfig({
             "@service": fileURLToPath(new URL("./src/service", import.meta.url)),
             "@entity": fileURLToPath(new URL("./src/entity", import.meta.url)),
             "@helpers": fileURLToPath(new URL("./src/helpers", import.meta.url)),
+            "@router": fileURLToPath(new URL("./src/router", import.meta.url)),
         }
     },
     base: "/",

@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
-import CategoryService from '@service/product/ProductService';
+import ProductService from '@service/product/ProductService';
 import type Product from '@entity/Product';
 
 const useProductStore = defineStore('product', () => {
@@ -9,7 +9,7 @@ const useProductStore = defineStore('product', () => {
 
     const fetchProducts = async () => {
         isLoading.value = true;
-        products.value = await CategoryService.fetchCategories();
+        products.value = await ProductService.fetchProducts();
         isLoading.value = false;
     };
 
