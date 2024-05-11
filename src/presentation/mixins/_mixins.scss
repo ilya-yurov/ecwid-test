@@ -6,6 +6,14 @@
   }
 }
 
+@mixin staticLayoutHeight100vh($var: 0px) {
+  height: calc(100vh - $footer-height - $header-height);
+
+  @supports (height: 100dvh) {
+    height: calc(100dvh - $footer-height - $header-height - $var);
+  }
+}
+
 @mixin flex-center {
   display: flex;
   justify-content: center;
@@ -49,7 +57,8 @@
 
 @mixin custom-scrollbar {
   &::-webkit-scrollbar {
-    height: 10px;
+    height: 5px;
+    width: 5px;
   }
 
   &::-webkit-scrollbar-track {

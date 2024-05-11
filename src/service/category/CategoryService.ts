@@ -21,7 +21,8 @@ export default class CategoryService {
             });
 
             return response.data.items.map(
-                ({ id, name, imageUrl, parentId }) => new Category(id, name, imageUrl, parentId)
+                ({ id, name, imageUrl, parentId }) =>
+                    new Category(id, name, imageUrl, parentId)
             );
         } catch (e) {
             console.error(e);
@@ -34,9 +35,7 @@ export default class CategoryService {
         try {
             const response = await api.get<Category>(CATEGORY(categoryId), {
                 params: {
-                    responseFields: getResponseFields(
-                        Category.CreateEmpty()
-                    ),
+                    responseFields: getResponseFields(Category.CreateEmpty())
                 }
             });
             const { id, name, imageUrl, parentId } = response.data;

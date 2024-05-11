@@ -11,6 +11,10 @@ const routes = [
             import('@presentation/components/page/Products/index.vue')
     },
     {
+        path: '/cart',
+        component: () => import('@presentation/components/page/Cart/index.vue')
+    },
+    {
         path: '/:pathMatch(.*)*',
         component: () =>
             import('@presentation/components/page/ErrorPage/index.vue')

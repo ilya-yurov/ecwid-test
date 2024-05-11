@@ -2,7 +2,7 @@ import GalleryImage from '@entity/GalleryImage';
 
 export default class Product {
     public static CreateEmpty(): Product {
-        return new Product(NaN, '', '', '', NaN, [], '');
+        return new Product(NaN, '', '', '', '', [], '');
     }
 
     constructor(
@@ -10,7 +10,7 @@ export default class Product {
         public readonly name: string,
         public readonly imageUrl: string,
         public readonly thumbnailUrl: string,
-        public readonly defaultDisplayedPriceFormatted: number,
+        public readonly defaultDisplayedPriceFormatted: string,
         public readonly galleryImages: GalleryImage[],
         public readonly description: string
     ) {}

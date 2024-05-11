@@ -3,12 +3,7 @@
         <div class="wrapper">
             <h1 class="header">{{ errorText }}</h1>
             <span class="error-code">{{ errorCode }}</span>
-            <BaseButton
-                :to="HOME"
-                :variant="'secondary'"
-            >
-                Go Home
-            </BaseButton>
+            <BaseButton :to="HOME" :variant="'secondary'"> Go Home </BaseButton>
         </div>
     </Layout>
 </template>
@@ -25,12 +20,8 @@ defineOptions({ name: 'ErrorPage' });
 <style lang="scss" scoped>
 .wrapper {
     flex-direction: column;
-    height: calc(100vh - $footer-height - $header-height);
 
-    @supports (height: 100dvh) {
-        height: calc(100dvh - $footer-height - $header-height);
-    }
-
+    @include staticLayoutHeight100vh;
     @include flex-center;
 }
 

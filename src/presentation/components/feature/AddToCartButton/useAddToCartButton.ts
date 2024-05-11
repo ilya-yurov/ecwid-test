@@ -19,7 +19,7 @@ const useAddToCartButton = (product: Product): ReturnT => {
 
     const removeFromCart = (event: MouseEvent) => {
         event.stopPropagation();
-        store.removeFromCart(product);
+        store.removeFromCart(product.id);
     };
 
     const count = computed(() => {

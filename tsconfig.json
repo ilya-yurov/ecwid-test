@@ -44,5 +44,5 @@
   ],
   "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }],
-  "types": ["vite-svg-loader"]
+  "types": ["vite-svg-loader", "vue3-toastify/global"],
 }

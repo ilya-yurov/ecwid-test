@@ -32,7 +32,7 @@
 
 <script setup lang="ts">
 import useCarousel from './useCarousel';
-import GalleryImage from '@entity/GalleryImage';
+import type GalleryImage from '@entity/GalleryImage';
 
 type PropsT = {
     name: string;
@@ -55,6 +55,7 @@ defineOptions({ name: 'Carousel' });
     background-color: $color-mint;
     border-radius: 15px;
     height: 550px;
+    overflow: hidden;
 
     @include box-shadow;
 }

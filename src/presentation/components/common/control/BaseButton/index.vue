@@ -44,24 +44,35 @@ defineOptions({ name: 'BaseButton' });
     border-radius: 10px;
     padding: 10px 15px;
 
-    &:active {
-        @include scale;
+    &:not(:disabled) {
+        &:active {
+            @include scale;
+        }
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.7;
     }
 }
 
 .button-primary {
     border: 2px solid $color-mint;
 
-    &:hover {
-        background-color: $color-mint;
+    &:not(:disabled) {
+        &:hover {
+            background-color: $color-mint;
+        }
     }
 }
 
 .button-secondary {
     background-color: $color-grayishGreen;
 
-    &:hover {
-        background-color: $color-lightGreen;
+    &:not(:disabled) {
+        &:hover {
+            background-color: $color-lightGreen;
+        }
     }
 }
 </style>

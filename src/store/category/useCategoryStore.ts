@@ -18,11 +18,11 @@ const useCategoryStore = defineStore('category', () => {
         isLoading.value = true;
         category.value = await CategoryService.fetchCategory(categoryId);
         isLoading.value = false;
-    }
+    };
 
     const setCategories = (list: Category[]) => {
         categories.value = list;
-    }
+    };
 
     return {
         categories,
@@ -30,7 +30,7 @@ const useCategoryStore = defineStore('category', () => {
         isLoading,
         fetchCategories,
         fetchCategory,
-        setCategories,
+        setCategories
     };
 });
 

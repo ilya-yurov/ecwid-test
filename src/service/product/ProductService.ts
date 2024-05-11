@@ -68,7 +68,7 @@ export default class ProductService {
                 imageUrl,
                 thumbnailUrl,
                 defaultDisplayedPriceFormatted,
-                [{id, imageUrl}, ...galleryImages],
+                [{ id, imageUrl }, ...galleryImages],
                 description
             );
         } catch (e) {

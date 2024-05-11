@@ -7,6 +7,6 @@ export default class Category {
         public readonly id: number,
         public readonly name: string,
         public readonly imageUrl: string,
-        public readonly parentId: number,
+        public readonly parentId: number
     ) {}
 }

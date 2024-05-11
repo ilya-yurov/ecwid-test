@@ -49,7 +49,7 @@ const useProductsPage = (): ReturnT => {
         router.push(NOT_FOUND).then();
     });
 
-    return {isLoading, isProductsPage};
+    return { isLoading, isProductsPage };
 };
 
 export default useProductsPage;
