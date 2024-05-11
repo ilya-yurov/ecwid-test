@@ -1,3 +1,4 @@
 export const CATEGORIES = '/categories';
 export const PRODUCTS = '/products';
-export const PRODUCT = (id: number) => `/products/${id}`;
+export const PRODUCT = (id: string) => `${PRODUCTS}/${id}`;
+export const CATEGORY = (id: string) => `${CATEGORIES}/${id}`;

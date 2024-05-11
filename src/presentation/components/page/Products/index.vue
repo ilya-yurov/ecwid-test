@@ -2,7 +2,7 @@
     <Layout>
         <div class="wrapper">
             <Product v-if="isProductsPage" />
-            <Category v-else />
+            <Category v-else :isLoading="isLoading" />
         </div>
     </Layout>
 </template>
@@ -10,7 +10,7 @@
 <script setup lang="ts">
 import useProductsPage from './useProductsPage';
 
-const isProductsPage = useProductsPage();
+const { isProductsPage, isLoading } = useProductsPage();
 
 defineOptions({ name: 'Products' });
 </script>

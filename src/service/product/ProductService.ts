@@ -3,19 +3,20 @@ import api from '@core/api';
 import { PRODUCT, PRODUCTS } from '@constant/api';
 import getResponseFields from '@helpers/getResponseFields';
 
-type ResponseT = {
+type ListResponseT = {
     items: Product[];
 };
 
 export default class ProductService {
-    static async fetchProducts(): Promise<Product[]> {
+    static async fetchProducts(categoryId?: string): Promise<Product[]> {
         try {
-            const response = await api.get<ResponseT>(PRODUCTS, {
+            const response = await api.get<ListResponseT>(PRODUCTS, {
                 params: {
                     responseFields: getResponseFields(
                         Product.CreateEmpty(),
                         true
-                    )
+                    ),
+                    ...(categoryId && { categories: categoryId })
                 }
             });
 
@@ -44,9 +45,9 @@ export default class ProductService {
         }
     }
 
-    static async fetchProduct(productId: number): Promise<Product> {
+    static async fetchProduct(productId: string): Promise<Product> {
         try {
-            const response = await api.get<ResponseT>(PRODUCT(productId), {
+            const response = await api.get<Product>(PRODUCT(productId), {
                 params: {
                     responseFields: getResponseFields(Product.CreateEmpty())
                 }
@@ -59,7 +60,7 @@ export default class ProductService {
                 defaultDisplayedPriceFormatted,
                 galleryImages,
                 description
-            } = response.data as unknown as Product;
+            } = response.data;
 
             return new Product(
                 id,

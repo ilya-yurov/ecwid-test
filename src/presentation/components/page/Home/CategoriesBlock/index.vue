@@ -1,5 +1,5 @@
 <template>
-    <HomeBlockContainer
+    <CardContainer
         class="container"
         title="Categories"
         description="Explore Your Passions: Find Your Ideal Category Match"
@@ -13,13 +13,14 @@
             :category="category"
         />
         <span v-else>No categories found</span>
-    </HomeBlockContainer>
+    </CardContainer>
 </template>
 
 <script setup lang="ts">
 import useCategories from '@presentation/hooks/categories/useCategories';
 import type CustomStylesT from '@presentation/types/CustomStyles';
 import ColorsEnum from '@presentation/enums/Colors';
+import CardContainer from '@presentation/components/feature/CardContainer/index.vue';
 
 const { categories, isLoading } = useCategories();
 const customDescriptionCss: CustomStylesT = {

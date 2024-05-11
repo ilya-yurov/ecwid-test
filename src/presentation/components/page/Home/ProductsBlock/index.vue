@@ -1,5 +1,5 @@
 <template>
-    <HomeBlockContainer
+    <CardContainer
         class="container"
         title="Products"
         description="Discover Your Perfect Fit: Tailored Selection Just for You"
@@ -13,7 +13,7 @@
             :product="product"
         />
         <span v-else>No products found</span>
-    </HomeBlockContainer>
+    </CardContainer>
 </template>
 
 <script setup lang="ts">

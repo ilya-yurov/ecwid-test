@@ -19,7 +19,7 @@
             <AddToCartButton :product="product" />
         </div>
     </section>
-    <Loader v-if="isLoading" />
+    <Loader v-else />
 </template>
 
 <script setup lang="ts">
@@ -42,6 +42,7 @@ defineOptions({ name: 'Product' });
     @include -lower(sm) {
         grid-template-columns: none;
         row-gap: 20px;
+        padding: 20px 0 35px;
     }
 }
 

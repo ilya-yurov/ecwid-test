@@ -27,7 +27,7 @@ type PropsT = {
 
 defineProps<PropsT>();
 
-defineOptions({ name: 'HomeBlockContainer' });
+defineOptions({ name: 'CardContainer' });
 </script>
 
 <style lang="scss" scoped>

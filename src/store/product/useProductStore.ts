@@ -8,13 +8,13 @@ const useProductStore = defineStore('product', () => {
     const product = ref(Product.CreateEmpty());
     const isLoading = ref(false);
 
-    const fetchProducts = async () => {
+    const fetchProducts = async (categoryId?: string) => {
         isLoading.value = true;
-        products.value = await ProductService.fetchProducts();
+        products.value = await ProductService.fetchProducts(categoryId);
         isLoading.value = false;
     };
 
-    const fetchProduct = async (id: number) => {
+    const fetchProduct = async (id: string) => {
         isLoading.value = true;
         product.value = await ProductService.fetchProduct(id);
         isLoading.value = false;
