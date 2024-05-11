@@ -1,7 +1,7 @@
 <template>
     <BaseLink :to="CART" class="wrapper">
-        <span v-show="count > 0" class="round">
-            {{ count }}
+        <span v-show="cart.length > 0" class="round">
+            {{ cart.length }}
         </span>
         <CartIcon class="icon" :class="{ 'icon-white': isWhite }" />
     </BaseLink>
@@ -10,13 +10,16 @@
 <script setup lang="ts">
 import { CART } from '@constant/routes.ts';
 import CartIcon from '@presentation/assets/svg/cart.svg';
+import useCartStore from '@store/cart/useCartStore';
 
 type PropsT = {
-    count?: number;
     isWhite?: boolean;
 };
 
-const { count = 0, isWhite } = defineProps<PropsT>();
+defineProps<PropsT>();
+
+const store = useCartStore();
+const { cart } = storeToRefs(store);
 
 defineOptions({ name: 'CartLink' });
 </script>

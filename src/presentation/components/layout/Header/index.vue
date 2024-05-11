@@ -6,10 +6,7 @@
         }"
     >
         <Navbar :isWhite="!isHeaderWithBackground && isDynamicHeaderPage" />
-        <CartLink
-            :count="MOCK_CART_ITEMS_COUNT"
-            :isWhite="!isHeaderWithBackground && isDynamicHeaderPage"
-        />
+        <CartLink :isWhite="!isHeaderWithBackground && isDynamicHeaderPage" />
     </header>
 </template>
 
@@ -17,7 +14,6 @@
 import useHeaderColorChange from '@presentation/hooks/layout/useHeaderColorChange';
 
 const { isHeaderWithBackground, isDynamicHeaderPage } = useHeaderColorChange();
-const MOCK_CART_ITEMS_COUNT = 10;
 
 defineOptions({ name: 'Header' });
 </script>

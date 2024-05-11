@@ -3,7 +3,12 @@
         <div class="wrapper">
             <h1 class="header">{{ errorText }}</h1>
             <span class="error-code">{{ errorCode }}</span>
-            <BaseButton :to="HOME" :variant="'secondary'">Go Home</BaseButton>
+            <BaseButton
+                :to="HOME"
+                :variant="'secondary'"
+            >
+                Go Home
+            </BaseButton>
         </div>
     </Layout>
 </template>

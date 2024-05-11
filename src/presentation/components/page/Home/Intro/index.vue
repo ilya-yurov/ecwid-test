@@ -5,12 +5,12 @@
                 Style<br /><span class="offset-right">in </span
                 ><span class="highlight">any</span>every<br />situation
             </h1>
-            <span class="subtitle">
+            <p class="subtitle">
                 Discover our collection of clothing and accessories that will
                 help you express
                 <br />yourself in any setting and emphasize your
                 <span class="highlight">unique and distinctive style</span>
-            </span>
+            </p>
         </div>
     </section>
 </template>

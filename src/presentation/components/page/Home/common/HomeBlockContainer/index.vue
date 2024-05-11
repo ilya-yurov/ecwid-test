@@ -2,10 +2,10 @@
     <section class="wrapper">
         <div class="container">
             <h2 class="title">{{ title }}</h2>
-            <span class="description" :style="descriptionCss">
+            <p class="description" :style="descriptionCss">
                 {{ description }}
-            </span>
-            <Loader v-if="isLoading" class="loader" :size="60" />
+            </p>
+            <Loader v-if="isLoading" class="loader" />
             <div v-else class="card-wrapper">
                 <div class="card-container">
                     <slot />

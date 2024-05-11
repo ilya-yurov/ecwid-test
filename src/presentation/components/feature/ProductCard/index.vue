@@ -9,13 +9,17 @@
         </RouterLink>
         <span class="name">{{ name }}</span>
         <span class="price">{{ defaultDisplayedPriceFormatted }}</span>
-        <BaseButton variant="secondary" class="button">Buy</BaseButton>
+        <AddToCartButton
+            class="button"
+            variant="secondary"
+            :product="product"
+        />
     </div>
 </template>
 
 <script setup lang="ts">
 import type Product from '@entity/Product';
-import { PRODUCTS } from '@constant/routes.ts';
+import { PRODUCTS } from '@constant/routes';
 
 type PropsT = {
     product: Product;

@@ -32,7 +32,9 @@ export default class ProductService {
                         name,
                         imageUrl,
                         thumbnailUrl,
-                        defaultDisplayedPriceFormatted
+                        defaultDisplayedPriceFormatted,
+                        [],
+                        ''
                     )
             );
         } catch (e) {
@@ -49,27 +51,25 @@ export default class ProductService {
                     responseFields: getResponseFields(Product.CreateEmpty())
                 }
             });
-            const {} = response.data as unknown as Product;
+            const {
+                id,
+                name,
+                imageUrl,
+                thumbnailUrl,
+                defaultDisplayedPriceFormatted,
+                galleryImages,
+                description
+            } = response.data as unknown as Product;
 
-            console.log(response);
-
-            return Product.CreateEmpty();
-            // return response.data.items.map(
-            //     ({
-            //         id,
-            //         name,
-            //         imageUrl,
-            //         thumbnailUrl,
-            //         defaultDisplayedPriceFormatted
-            //     }) =>
-            //         new Product(
-            //             id,
-            //             name,
-            //             imageUrl,
-            //             thumbnailUrl,
-            //             defaultDisplayedPriceFormatted
-            //         )
-            // );
+            return new Product(
+                id,
+                name,
+                imageUrl,
+                thumbnailUrl,
+                defaultDisplayedPriceFormatted,
+                [{id, imageUrl}, ...galleryImages],
+                description
+            );
         } catch (e) {
             console.error(e);
 

@@ -4,8 +4,8 @@
         :to="to"
         class="button"
         :class="{
-            'button-primary': rcVariant === 'primary',
-            'button-secondary': rcVariant === 'secondary'
+            'button-primary': refVariant === 'primary',
+            'button-secondary': refVariant === 'secondary'
         }"
     >
         <slot />
@@ -14,8 +14,8 @@
         v-else
         class="button"
         :class="{
-            'button-primary': rcVariant === 'primary',
-            'button-secondary': rcVariant === 'secondary'
+            'button-primary': refVariant === 'primary',
+            'button-secondary': refVariant === 'secondary'
         }"
         :type="type"
     >
@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-type PropsT = {
+export type PropsT = {
     variant?: 'primary' | 'secondary';
     type?: 'button' | 'submit';
     to?: string;
@@ -34,7 +34,7 @@ const { variant } = withDefaults(defineProps<PropsT>(), {
     variant: 'primary',
     type: 'button'
 });
-const rcVariant = ref(variant);
+const refVariant = ref(variant);
 
 defineOptions({ name: 'BaseButton' });
 </script>

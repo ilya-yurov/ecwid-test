@@ -12,7 +12,8 @@ const api = axios.create({
 api.interceptors.response.use(
     (response) => {
         return response;
-    }, (error) => {
+    },
+    (error) => {
         router.push(`/${error.response.status}`).then();
 
         return Promise.reject(error.response);
