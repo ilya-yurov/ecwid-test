@@ -39,7 +39,7 @@ defineOptions({ name: 'CartLink' });
     position: absolute;
     top: -7px;
     right: -7px;
-    background-color: $color-peachy;
+    background-color: $color-orange;
     border-radius: 50%;
     height: 17px;
     width: 17px;

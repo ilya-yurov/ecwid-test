@@ -9,7 +9,8 @@ const enum ColorsEnum {
     MarshGreen = '#2B3F38',
     GrayishGreen = '#9FB4AC',
     Blue = '#6C848C',
-    Green = '#566561'
+    Green = '#566561',
+    Orange = '#FBA303'
 }
 
 export default ColorsEnum;

@@ -65,6 +65,6 @@ defineOptions({ name: 'Intro' });
 }
 
 .highlight {
-    color: $color-sandy;
+    color: $color-orange;
 }
 </style>
