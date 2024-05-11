@@ -13,11 +13,6 @@ export default defineConfig({
             imports: ["vue", "vue-router", "pinia"],
             vueTemplate: true,
             dts: true,
-            eslintrc: {
-                enabled: true,
-                filepath: "./.eslintrc-auto-import.json",
-                globalsPropValue: true
-            },
         }),
         Components({dirs: ["src/presentation/components"], dts: true}),
         svgLoader(),

@@ -1,7 +1,7 @@
-import Category from '@entity/Category.ts';
+import Category from '@entity/Category';
 import api from '@core/api';
-import { CATEGORIES, CATEGORY } from '@constant/api.ts';
-import getResponseFields from '@helpers/getResponseFields.ts';
+import { CATEGORIES, CATEGORY } from '@constant/api';
+import getResponseFields from '@helpers/getResponseFields';
 
 type ListResponseT = {
     items: Category[];

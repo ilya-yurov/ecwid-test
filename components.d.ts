@@ -20,7 +20,6 @@ declare module 'vue' {
     Category: typeof import('./src/presentation/components/page/Products/Category/index.vue')['default']
     CategoryCard: typeof import('./src/presentation/components/feature/CategoryCard/index.vue')['default']
     EmptyBlock: typeof import('./src/presentation/components/feature/EmptyBlock/index.vue')['default']
-    EmptyCategory: typeof import('./src/presentation/components/page/Products/Category/EmptyCategory/index.vue')['default']
     ErrorPage: typeof import('./src/presentation/components/page/ErrorPage/index.vue')['default']
     Footer: typeof import('./src/presentation/components/layout/Footer/index.vue')['default']
     Header: typeof import('./src/presentation/components/layout/Header/index.vue')['default']

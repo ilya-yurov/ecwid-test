@@ -42,6 +42,7 @@ const useCartStore = defineStore('cart', () => {
         if (existingItemIndex !== -1) {
             if (isWhole) {
                 cart.value.splice(existingItemIndex, 1);
+                saveCartToLocalStorage(cart.value);
 
                 return;
             }
