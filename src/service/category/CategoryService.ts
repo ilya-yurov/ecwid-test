@@ -1,14 +1,18 @@
 import Category from '@entity/Category';
 import api from '@core/api';
-import { CATEGORIES, CATEGORY } from '@constant/api';
+import { CATEGORIES, CATEGORY, SORTED_CATEGORIES } from '@constant/api';
 import getResponseFields from '@helpers/getResponseFields';
+
+type CategoryIdListT = {
+    sortedIds : number[];
+}
 
 type ListResponseT = {
     items: Category[];
 };
 
 export default class CategoryService {
-    static async fetchCategories(parentId?: string): Promise<Category[]> {
+    static async fetchCategories(childrenIds?: number[]): Promise<Category[]> {
         try {
             const response = await api.get<ListResponseT>(CATEGORIES, {
                 params: {
@@ -16,14 +20,30 @@ export default class CategoryService {
                         Category.CreateEmpty(),
                         true
                     ),
-                    ...(parentId && { parentCategoryId: parentId })
+                    ...(childrenIds && childrenIds.length > 0 && { categoryIds  : childrenIds.join(',') })
                 }
             });
 
             return response.data.items.map(
-                ({ id, name, imageUrl, parentId }) =>
-                    new Category(id, name, imageUrl, parentId)
+                ({ id, name, imageUrl }) =>
+                    new Category(id, name, imageUrl)
             );
+        } catch (e) {
+            console.error(e);
+
+            return [];
+        }
+    }
+
+    static async fetchChildrenCategoryIds(parentId: string): Promise<number[]> {
+        try {
+            const response = await api.get<CategoryIdListT>(SORTED_CATEGORIES, {
+                params: {
+                    parentCategory: parentId
+                }
+            });
+
+            return response.data.sortedIds;
         } catch (e) {
             console.error(e);
 
@@ -38,9 +58,9 @@ export default class CategoryService {
                     responseFields: getResponseFields(Category.CreateEmpty())
                 }
             });
-            const { id, name, imageUrl, parentId } = response.data;
+            const { id, name, imageUrl } = response.data;
 
-            return new Category(id, name, imageUrl, parentId);
+            return new Category(id, name, imageUrl);
         } catch (e) {
             console.error(e);
 

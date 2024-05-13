@@ -8,9 +8,9 @@ const useCategoryStore = defineStore('category', () => {
     const category = ref(Category.CreateEmpty());
     const isLoading = ref(false);
 
-    const fetchCategories = async (parentId?: string) => {
+    const fetchCategories = async (childrenIds?: number[]) => {
         isLoading.value = true;
-        categories.value = await CategoryService.fetchCategories(parentId);
+        categories.value = await CategoryService.fetchCategories(childrenIds);
         isLoading.value = false;
     };
 

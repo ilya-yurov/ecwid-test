@@ -3,6 +3,7 @@ import { NOT_FOUND } from '@constant/routes.ts';
 import { useRouter, useRoute } from 'vue-router';
 import useProductStore from '@store/product/useProductStore';
 import useCategoryStore from '@store/category/useCategoryStore.ts';
+import CategoryService from '@service/category/CategoryService.ts';
 
 type ReturnT = {
     isProductsPage: Ref<boolean>;
@@ -32,14 +33,18 @@ const useProductsPage = (): ReturnT => {
         if (categoryId) {
             isLoading.value = true;
 
-            await categoryStore.fetchCategory(categoryId);
-            await productStore.fetchProducts(categoryId);
+            const ids = await CategoryService.fetchChildrenCategoryIds(categoryId);
 
-            if (categoryStore.category.parentId) {
-                await categoryStore.fetchCategories(categoryId);
+            if (ids.length > 0) {
+                await categoryStore.fetchCategories(ids);
             } else {
                 categoryStore.setCategories([]);
             }
+
+            await Promise.all([
+                categoryStore.fetchCategory(categoryId),
+                productStore.fetchProducts(categoryId),
+            ]);
 
             isLoading.value = false;
 
