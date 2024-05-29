@@ -3,16 +3,16 @@ import { createRouter, createWebHistory } from 'vue-router';
 const routes = [
     {
         path: '/',
-        component: () => import('@presentation/components/page/Home/index.vue')
+        component: () => import('@presentation/components/page/HomePage/index.vue')
     },
     {
         path: '/products',
         component: () =>
-            import('@presentation/components/page/Products/index.vue')
+            import('@presentation/components/page/ProductsPage/index.vue')
     },
     {
         path: '/cart',
-        component: () => import('@presentation/components/page/Cart/index.vue')
+        component: () => import('@presentation/components/page/CartPage/index.vue')
     },
     {
         path: '/:pathMatch(.*)*',

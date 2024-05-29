@@ -5,10 +5,10 @@
             <p class="description" :style="descriptionCss">
                 {{ description }}
             </p>
-            <Loader v-if="isLoading" class="loader" />
+            <BaseLoader v-if="isLoading" class="loader" />
             <div v-else class="card-wrapper">
                 <div class="card-container">
-                    <slot />
+                    <slot></slot>
                 </div>
             </div>
         </div>

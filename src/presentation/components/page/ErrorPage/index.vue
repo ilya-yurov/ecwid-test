@@ -1,11 +1,11 @@
 <template>
-    <Layout>
+    <BaseLayout>
         <div class="wrapper">
             <h1 class="header">{{ errorText }}</h1>
             <span class="error-code">{{ errorCode }}</span>
             <BaseButton :to="HOME" :variant="'secondary'"> Go Home </BaseButton>
         </div>
-    </Layout>
+    </BaseLayout>
 </template>
 
 <script setup lang="ts">

@@ -1,6 +1,6 @@
 <template>
     <RouterLink class="link-wrapper" :to="to">
-        <slot />
+        <slot></slot>
     </RouterLink>
 </template>
 

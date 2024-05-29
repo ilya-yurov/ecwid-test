@@ -8,7 +8,7 @@
             'button-secondary': refVariant === 'secondary'
         }"
     >
-        <slot />
+        <slot></slot>
     </RouterLink>
     <button
         v-else
@@ -19,7 +19,7 @@
         }"
         :type="type"
     >
-        <slot />
+        <slot></slot>
     </button>
 </template>
 
